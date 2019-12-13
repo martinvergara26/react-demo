@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import * as L from "leaflet";
-import './styles.css'
 import {addMarkers} from "./markers";
+import Layout from "../Layout/Layout";
 
 export default class MapContainer extends React.Component {
 
@@ -19,7 +19,11 @@ export default class MapContainer extends React.Component {
   }
 
   render() {
-    return <div id="map"/>
+    return (
+      <Layout title={'Map'}>
+        <div id="map" style={{height: '90vh'}}/>
+      </Layout>
+    )
   }
 
 }
