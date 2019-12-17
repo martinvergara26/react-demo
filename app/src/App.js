@@ -1,19 +1,18 @@
 import React from 'react';
-import './App.css';
-import Map from "./routes/Map";
-import Home from "./routes/Home";
-import Markers from "./routes/Markers"
-import About from "./routes/About"
+import Map from "./containers/Map";
+import Home from "./containers/Home";
+import Markers from "./containers/Markers"
+import About from "./containers/About"
 
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route
 } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route path="/map">
           <Map />
@@ -28,7 +27,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
   )
 }
 

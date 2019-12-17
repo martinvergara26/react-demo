@@ -18,14 +18,15 @@ export const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
+    padding: 0,
+    width: theme.spacing(6),
   },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  fullList: {
-    width: 'auto',
-  },
+  toolbar: {
+    paddingLeft: theme.spacing(2),
+    minHeight: '10vh',
+    height: '10vh'
+  }
 }));
 
 
@@ -38,7 +39,9 @@ export default function TopBar(props) {
         position="relative"
         className={classes.appBar}
       >
-        <Toolbar>
+        <Toolbar
+          className={classes.toolbar}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
