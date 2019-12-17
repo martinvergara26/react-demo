@@ -11,7 +11,6 @@ const useStyles = makeStyles(theme => ({
     height: '90vh'
   },
   content: props => ({
-    background: 'linear-gradient(90deg, rgba(61,51,255,1) 0%, rgba(139,139,250,1) 46%, rgba(182,229,238,1) 100%);',
     margin: 0,
     padding: props.fullSize ? 0 : theme.spacing(12),
     paddingTop: props.fullSize ? 0 : theme.spacing(4),
@@ -29,18 +28,18 @@ export default function Layout (props) {
   const classes = useStyles(props);
 
   return [
-      <CssBaseline key={'baseline'}/>,
-      <Menu key={'menu'}
-        title={props.title}
-      />,
-      <div key={'page'} className={classes.page}>
-        <div key={'content'} className={classes.content}>
-          {props.children}
-        </div>
-        <div key={'footer'} className={classes.footer}>
-          {props.footer}
-        </div>
+    <CssBaseline key={'baseline'}/>,
+    <Menu key={'menu'}
+      title={props.title}
+    />,
+    <div key={'page'} className={classes.page}>
+      <div key={'content'} className={classes.content}>
+        {props.children}
       </div>
-    ]
+      <div key={'footer'} className={classes.footer}>
+        {props.footer}
+      </div>
+    </div>
+  ]
 
 }

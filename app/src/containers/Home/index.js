@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import CityCard from "./CityCard";
 import {cities} from './cities'
 import Footer from '../../components/Footer'
+import MainCard from "./MainCard";
 
 const useStyles = makeStyles(theme => ({
   gridContainer: {
@@ -13,6 +14,13 @@ const useStyles = makeStyles(theme => ({
     margin: 0,
     marginLeft: - theme.spacing(2),
     marginRight: - theme.spacing(2)
+  },
+  welcomeContainer: {
+    padding: theme.spacing(6),
+    textAlign: 'center',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 }));
 
@@ -22,7 +30,9 @@ export default function Home() {
 
   return (
     <Layout title={'Home'} footer={<Footer />}>
-      <Typography variant="h2">
+      <MainCard />
+
+      <Typography variant="h4">
         Coming cities
       </Typography>
 

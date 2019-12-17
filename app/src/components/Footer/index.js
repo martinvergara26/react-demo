@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     padding:0,
     margin: 0,
-    backgroundColor: 'black',
+    backgroundColor: theme.palette.primary.main,
   }
 }));
 
