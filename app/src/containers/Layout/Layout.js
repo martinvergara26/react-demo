@@ -12,9 +12,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: props => ({
     margin: 0,
-    padding: props.fullSize ? 0 : theme.spacing(12),
-    paddingTop: props.fullSize ? 0 : theme.spacing(4),
-    paddingBottom: props.fullSize ? 0 : theme.spacing(4),
+    padding: props.fullSize ? 0 : theme.spacing(4),
     minHeight: '100%',
     height: 'auto'
   }),
