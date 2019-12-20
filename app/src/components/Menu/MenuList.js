@@ -40,25 +40,33 @@ export default function MenuList(props) {
         onKeyDown={props.toggleDrawer(false)}
       >
         <List>
-          <ListItem button key={'home'}>
-            <ListItemIcon><HomeIcon /></ListItemIcon>
-            <ListItemText primary={<Link className={classes.link} to="/">Home</Link>} />
-          </ListItem>
-          <ListItem button key={'map'}>
-            <ListItemIcon><MapIcon /></ListItemIcon>
-            <ListItemText primary={<Link className={classes.link} to="/map">Map</Link>} />
-          </ListItem>
-          <ListItem button key={'markers'}>
-            <ListItemIcon><RoomIcon /></ListItemIcon>
-            <ListItemText primary={<Link className={classes.link} to="/markers">My markers</Link>} />
-          </ListItem>
+          <Link className={classes.link} to="/">
+            <ListItem button key={'home'}>
+              <ListItemIcon><HomeIcon /></ListItemIcon>
+              <ListItemText primary={'Home'} />
+            </ListItem>
+          </Link>
+          <Link className={classes.link} to="/map">
+            <ListItem button key={'map'}>
+              <ListItemIcon><MapIcon /></ListItemIcon>
+              <ListItemText primary={'Map'} />
+            </ListItem>
+          </Link>
+          <Link className={classes.link} to="/markers">
+            <ListItem button key={'markers'}>
+              <ListItemIcon><RoomIcon /></ListItemIcon>
+              <ListItemText primary={'My markers'} />
+            </ListItem>
+          </Link>
 
           <Divider/>
 
-          <ListItem button key={'about'}>
-            <ListItemIcon><InfoIcon /></ListItemIcon>
-            <ListItemText primary={<Link className={classes.link} to="/about">About</Link>} />
-          </ListItem>
+          <Link className={classes.link} to="/about">
+            <ListItem button key={'about'}>
+              <ListItemIcon><InfoIcon /></ListItemIcon>
+              <ListItemText primary={'About'} />
+            </ListItem>
+          </Link>
         </List>
       </div>
     </Drawer>

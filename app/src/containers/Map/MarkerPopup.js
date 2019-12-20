@@ -1,11 +1,9 @@
 import React from 'react';
 import Button from "@material-ui/core/Button";
-import {deleteMarker, getSavedMarkers, saveMarker} from "../../userStorage";
+import {getSavedMarkers} from "../../userStorage";
 
 export function MarkerPopup ({id}) {
   const savedMarkers = getSavedMarkers();
-
-  console.log('rendering', id)
 
   if(savedMarkers.includes(id)){
     return <div>

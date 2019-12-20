@@ -4,26 +4,24 @@ import MenuList from "./MenuList";
 import {withRouter} from 'react-router-dom';
 
 function Menu(props) {
-  const [state, setState] = React.useState({
-    open: false
-  });
+  const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = open => event => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
-    setState({ ...state, ['open']: open });
+    setOpen(open);
   };
 
   return [
       <TopBar key={'top-bar'}
         title={props.title}
-        open={state.open}
+        open={open}
         toggleDrawer={toggleDrawer}
       />,
       <MenuList key={'menu-list'}
-        open={state.open}
+        open={open}
         toggleDrawer={toggleDrawer}
       />
   ];

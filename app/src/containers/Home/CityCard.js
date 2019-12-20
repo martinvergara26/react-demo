@@ -12,7 +12,7 @@ export default function CityCard({city}) {
   const [open, setOpen] = React.useState(false);
 
   return [
-    <Card>
+    <Card key={`card-${city.name}`}>
       <CardMedia
         style = {{ height: 200}}
         image={city.image}
@@ -33,9 +33,9 @@ export default function CityCard({city}) {
       </CardActions>
     </Card>,
     open &&
-    <Dialog onClose={() =>setOpen(false)} open={open} maxWidth={'xl'}>
+    <Dialog key={`dialog-${city.name}`} onClose={() =>setOpen(false)} open={open} maxWidth={'xl'}>
       <DialogTitle id="simple-dialog-title">Photo of {city.name}</DialogTitle>
-      <img style={{width: '100%'}} src={city.image} />
+      <img alt={city.name} style={{width: '100%'}} src={city.image} />
     </Dialog>
   ]
 
