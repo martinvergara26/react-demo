@@ -2,13 +2,15 @@ import React from 'react'
 import * as L from "leaflet";
 import {addMarkers, markerPoints} from "./markers";
 import Layout from "../Layout/index";
-import {getQueryParam} from "../../helpers";
+import * as queryString from "query-string";
 
 export default class MapContainer extends React.Component {
 
   componentDidMount() {
+    const params = queryString.parse(this.props.location.search);
+
     let initialView = [51.505, -0.09];
-    const selectedMarker = getQueryParam('markerID');
+    const selectedMarker = params.markerID;
     if(selectedMarker) {
       initialView = markerPoints[selectedMarker - 1];
     }

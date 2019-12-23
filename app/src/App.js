@@ -6,31 +6,19 @@ import About from "./containers/About"
 import { theme } from './theme'
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-      <BrowserRouter>
+      <HashRouter basename={'react-demo'}>
         <Switch>
-            <Route path="/map">
-              <Map />
-            </Route>
-            <Route path="/markers">
-              <Markers />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/map" component={Map} />
+            <Route path="/markers" component={Markers} />
+            <Route path="/about" component={About} />
+            <Route path="/" component={Home} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </MuiThemeProvider>
   )
 }
